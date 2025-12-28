@@ -1,0 +1,36 @@
+---
+version: "3"
+services:
+ db:
+   image: arunkumarkoyyala/pythonproj:dbimage
+   ports:
+     - "3306:3306"
+
+ auth_service:
+   image: arunkumarkoyyala/pythonproj:authimage
+   ports:
+     - "5001:5001"
+   depends_on:
+     - "db"
+     
+ book_service:
+   image: arunkumarkoyyala/pythonproj:bookimage
+   ports:
+     - "5002:5002"
+   depends_on:
+     - "db"
+
+ borrow_service:
+   image: arunkumarkoyyala/pythonproj:borrowimage
+   ports:
+     - "5003:5003"
+   depends_on:
+     - "db"
+
+ frontend_service:
+   image: arunkumarkoyyala/pythonproj:frontendimage
+   ports:
+     - "5000:5000"
+   depends_on:
+     - "db"
+  
