@@ -32,5 +32,7 @@ services:
    ports:
      - "5000:5000"
    depends_on:
-     - "db"
+     - "auth_service"
+     - "book_service"
+     - "borrow_service"
   
