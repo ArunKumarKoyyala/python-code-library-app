@@ -26,6 +26,3 @@ INSERT INTO books (title, author) VALUES
 ("Docker Book", "ARUN"),
 ("Kubernetes", "Arun Kumar"),
 ("Terraform", "Kumar");
-
-GRANT ALL PRIVILEGES ON *.* TO 'root'@'%';
-FLUSH PRIVILEGES;
